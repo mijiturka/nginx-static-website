@@ -5,7 +5,7 @@ RUN apt-get -y install nginx
 # Not required, but convenient to have
 RUN apt-get -y install curl
 
-ARG SITE_NAME=app
+ARG SITE_NAME=site
 ENV SITE_NAME=$SITE_NAME
 
 # Configure NGINX
