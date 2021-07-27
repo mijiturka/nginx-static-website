@@ -9,9 +9,8 @@ ARG SITE_NAME=app
 ENV SITE_NAME=$SITE_NAME
 
 # Configure NGINX
-WORKDIR /setup
-COPY settings.conf .
-COPY configure.sh .
+WORKDIR /home/root/setup
+COPY nginx/ .
 RUN /bin/bash configure.sh
 
 # Put the files on the server
