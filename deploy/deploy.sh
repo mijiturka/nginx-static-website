@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set eux pipefail
+set -eux pipefail
 
 apt-get -y update && apt-get -y upgrade
 apt-get -y install nginx
@@ -8,8 +8,8 @@ apt-get -y install nginx
 apt-get -y install curl
 
 # Configure NGINX
-pushd /setup/nginx
+pushd /setup
 /bin/bash configure.sh
 
-nginx
+service nginx reload
 popd

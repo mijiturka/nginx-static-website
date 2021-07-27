@@ -29,18 +29,32 @@ Or, to expose the server to the host at port 8000:
 $ sudo docker rm server && sudo docker run -it --name server -p 8000:80 server_image
 ```
 
+## Test
 Now, in your host you can do:
 ```
 $ curl http://localhost:8000                                     
-<html>
-<head>
-  <title>Success!</title>
-</head>
+<html> ...
+```
 
-<body>
-  <h1>You've reached it!</h1>
-  Huzzah. Here's <a href="another.html">another page.</a>
-</body>
 
-</html>
+# Deploy on Linode
+
+on local:
+```
+$ export LINODE_USER=<user>
+$ export LINODE_IP=<ip>
+$ export SITE_NAME=site
+$ bash deploy/copy.sh
+```
+
+on node:
+```
+$ export SITE_NAME=site
+$ cd /setup
+$ bash deploy.sh
+```
+
+## Test
+```
+$ curl http://$LINODE_IP/
 ```
