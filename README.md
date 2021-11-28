@@ -16,7 +16,7 @@ $ sudo docker build -t server_image .
 
 Or, to use a different top-level directory for files:
 ```
-$ sudo docker build --build-arg APP_NAME=<something_else> -t server_image .
+$ sudo docker build --build-arg SITE_NAME=<something_else> -t server_image .
 ```
 
 ## Run
